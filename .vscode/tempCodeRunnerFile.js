@@ -1,14 +1,13 @@
 var money=+prompt("Ваш бюджет на месяц", '1000' );
 var time=prompt("Введите дату в формате YYYY-MM-DD", '1234');
-var a;
+console.log(money);
 var appData={
     budjet: money,
     timeData: time,
     expenses: {},
     optionalExpenses: {},
     income: [],
-    savings: false,
-    moneyPerDay: money/30
+    savings: false
 };
 
 for (var i = 0; i < 2; i++) {
@@ -27,8 +26,10 @@ for (var i = 0; i < 2; i++) {
 
 }
 
+appData.moneyPerDay = appData.budget / 30;
 
-alert ("Бюджет на 1 день составляет " + appData.moneyPerDay);
+
+alert ("Бюджет на 1 день составляет " + appData.moneyPerDay + "руб.");
 
 
 if (appData.moneyPerDay < 100) {
